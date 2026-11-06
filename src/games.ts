@@ -21,7 +21,7 @@ export const games: Game[] = [
   {
     name: "Avioanele",
     description: "Avioanele de pe foaia de matematică, în doi. Tabla ta sus, a adversarului jos. Prietenii pot privi.",
-    url: "https://avioane.hailatat.icu",
+    url: "https://airplanes.hailatat.icu",
     emoji: "✈️",
     tag: "2 jucători + spectatori",
   },
