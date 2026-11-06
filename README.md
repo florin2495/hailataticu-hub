@@ -7,8 +7,8 @@ Pagina de start pentru **hailatat.icu**: listează jocurile. Fiecare joc e un pr
 | `hailatat.icu` | acest repo (`florin2495/hailataticu-hub`) |
 | `bingo.hailatat.icu` | `florin2495/webBingoGame` |
 | `table.hailatat.icu` | `florin2495/webTableGame` |
-| `xsi0.hailatat.icu` | `florin2495/webXsi0Game` |
 | `avioane.hailatat.icu` | `florin2495/webAvioaneleGame` |
+| `xsi0.hailatat.icu` | `florin2495/webXsi0Game` |
 
 ## Cum adaugi un joc nou
 
