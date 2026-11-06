@@ -8,7 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "hailatat",
+  title: "haiLaTăticu",
   description: "Jocuri mici, de jucat cu prietenii.",
 };
 
