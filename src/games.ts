@@ -1,0 +1,21 @@
+// The list of games shown on hailatat.icu.
+// To add a game: deploy it as its own Vercel project on a subdomain, then append one entry here.
+
+export interface Game {
+  name: string;
+  description: string;
+  url: string;
+  emoji: string;
+  /** Optional short tag, e.g. "multiplayer". */
+  tag?: string;
+}
+
+export const games: Game[] = [
+  {
+    name: "Bingo",
+    description: "Bingo-ul de pe hârtie, jucat cu prietenii pe telefon. Matrice N×N, ture, validare.",
+    url: "https://bingo.hailatat.icu",
+    emoji: "🎱",
+    tag: "multiplayer",
+  },
+];
