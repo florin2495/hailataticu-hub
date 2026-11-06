@@ -53,6 +53,14 @@ export const games: Game[] = [
     emoji: "🎰",
     tag: "2 jucători + 5 chibiți",
   },
+  {
+    slug: "whist",
+    name: "Whist",
+    description: "Whist românesc cu licitație, 1-8-1 sau 8-1-8. Atu, levate, foaie de scor și bonus ±10.",
+    url: "https://whist.hailatat.icu",
+    emoji: "🃏",
+    tag: "3–4 jucători",
+  },
 ];
 
 /** Label + emoji for every slug that can appear in hub_feedback.game. */

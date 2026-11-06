@@ -24,4 +24,4 @@ Hub site hailatat.icu (Next.js + Tailwind). Lists the games and collects/reads f
 
 - Table `hub_feedback` (RLS on, no policies: only the service role key reads/writes).
 - Hub routes: `GET/POST /api/feedback`, `POST /api/feedback/delete` (password checked server-side). Page: `/feedback`.
-- Each game inserts into `hub_feedback` through its own `/api/feedback` route, with `game` = slug: `hub`, `bingo`, `backgammon`, `airplanes`, `tictactoe`, `barbut`. Slugs live in `src/games.ts`.
+- Each game inserts into `hub_feedback` through its own `/api/feedback` route, with `game` = slug: `hub`, `bingo`, `backgammon`, `airplanes`, `tictactoe`, `barbut`, `whist`. Slugs live in `src/games.ts`.
