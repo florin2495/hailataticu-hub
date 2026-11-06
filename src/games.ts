@@ -18,4 +18,11 @@ export const games: Game[] = [
     emoji: "🎱",
     tag: "multiplayer",
   },
+  {
+    name: "Avioanele",
+    description: "Avioanele de pe foaia de matematică, în doi. Tabla ta sus, a adversarului jos. Prietenii pot privi.",
+    url: "https://avioane.hailatat.icu",
+    emoji: "✈️",
+    tag: "2 jucători + spectatori",
+  },
 ];
