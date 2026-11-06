@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { games } from "@/games";
+import FeedbackButton from "@/components/FeedbackButton";
 
 export default function Home() {
   return (
@@ -7,6 +9,16 @@ export default function Home() {
         <h1 className="text-4xl font-black tracking-tight sm:text-5xl">haiLaTăticu</h1>
         <p className="mt-2 text-zinc-600 dark:text-zinc-400">Jocuri mici, de jucat cu prietenii.</p>
       </header>
+
+      <div className="-mt-4 mb-8 grid grid-cols-2 gap-3">
+        <FeedbackButton className="min-h-11 rounded-xl border-2 border-indigo-600 px-3 text-base font-semibold text-indigo-600 transition-colors hover:bg-indigo-600 hover:text-white dark:border-indigo-400 dark:text-indigo-400 dark:hover:bg-indigo-500 dark:hover:text-white" />
+        <Link
+          href="/feedback"
+          className="flex min-h-11 items-center justify-center rounded-xl border-2 border-zinc-300 px-3 text-base font-semibold text-zinc-700 transition-colors hover:border-indigo-400 dark:border-zinc-700 dark:text-zinc-300"
+        >
+          📖 Citește feedback
+        </Link>
+      </div>
 
       <ul className="grid gap-4 sm:grid-cols-2">
         {games.map((game) => (

@@ -20,8 +20,10 @@ Pagina de start pentru **hailatat.icu**: listează jocurile. Fiecare joc e un pr
 ## Local
 
 ```bash
+cp .env.example .env.local   # completează valorile
 npm install
 npm run dev
 ```
 
-Nu are backend și nici variabile de mediu.
+Variabile de mediu (doar server, și în Vercel): `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `HUB_ADMIN_PASSWORD`.
+Feedback-ul se salvează în tabela `hub_feedback` din Supabase-ul comun: rulează o dată [`supabase/migrations/001_hub_feedback.sql`](supabase/migrations/001_hub_feedback.sql) în SQL editor.
