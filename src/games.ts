@@ -35,7 +35,7 @@ export const games: Game[] = [
   {
     name: "Table",
     description: "Table (backgammon) în doi, pe telefon. Meci până la 1–7 puncte. Încă 2 prieteni pot privi.",
-    url: "https://table.hailatat.icu",
+    url: "https://backgammon.hailatat.icu",
     emoji: "🎲",
     tag: "2 jucători + spectatori",
   },
