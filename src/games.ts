@@ -54,6 +54,14 @@ export const games: Game[] = [
     tag: "2 jucători + 5 chibiți",
   },
   {
+    slug: "rentz",
+    name: "Rentz",
+    description: "Rentz-ul clasic cu cărți, în 3 sau 4 prieteni. 7 jocuri fiecare, iar o dată pe meci poți refuza cărțile.",
+    url: "https://rentz.hailatat.icu",
+    emoji: "♥️",
+    tag: "3–4 jucători",
+  },
+  {
     slug: "whist",
     name: "Whist",
     description: "Whist românesc cu licitație, 1-8-1 sau 8-1-8. Atu, levate, foaie de scor și bonus ±10.",
