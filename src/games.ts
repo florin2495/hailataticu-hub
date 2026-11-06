@@ -32,4 +32,11 @@ export const games: Game[] = [
     emoji: "❌",
     tag: "2 jucători + spectatori",
   },
+  {
+    name: "Table",
+    description: "Table (backgammon) în doi, pe telefon. Meci până la 1–7 puncte. Încă 2 prieteni pot privi.",
+    url: "https://table.hailatat.icu",
+    emoji: "🎲",
+    tag: "2 jucători + spectatori",
+  },
 ];
