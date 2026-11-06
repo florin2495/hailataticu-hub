@@ -27,8 +27,8 @@ export default function Home() {
               </span>
               <span className="text-2xl font-bold">{game.name}</span>
               <span className="text-sm text-zinc-600 dark:text-zinc-400">{game.description}</span>
-              <span className="mt-auto pt-2 text-sm font-semibold text-indigo-600 group-hover:underline dark:text-indigo-400">
-                Joacă →
+              <span className="mt-auto flex min-h-11 w-full items-center justify-center rounded-xl border-2 border-indigo-600 text-base font-semibold text-indigo-600 transition-colors group-hover:bg-indigo-600 group-hover:text-white dark:border-indigo-400 dark:text-indigo-400 dark:group-hover:bg-indigo-500 dark:group-hover:text-white">
+                Joacă
               </span>
             </a>
           </li>
