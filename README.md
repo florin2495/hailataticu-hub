@@ -8,7 +8,7 @@ Pagina de start pentru **hailatat.icu**: listează jocurile. Fiecare joc e un pr
 | `bingo.hailatat.icu` | `florin2495/webBingoGame` |
 | `table.hailatat.icu` | `florin2495/webTableGame` |
 | `avioane.hailatat.icu` | `florin2495/webAvioaneleGame` |
-| `xsi0.hailatat.icu` | `florin2495/webXsi0Game` |
+| `tictactoe.hailatat.icu` | `florin2495/webXsi0Game` |
 
 ## Cum adaugi un joc nou
 

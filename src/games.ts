@@ -28,7 +28,7 @@ export const games: Game[] = [
   {
     name: "X și 0",
     description: "X și 0 clasic, cu un prieten. Încă 2 pot intra ca spectatori și urmăresc jocul live.",
-    url: "https://xsi0.hailatat.icu",
+    url: "https://tictactoe.hailatat.icu",
     emoji: "❌",
     tag: "2 jucători + spectatori",
   },
