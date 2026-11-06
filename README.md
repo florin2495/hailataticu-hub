@@ -12,10 +12,18 @@ Pagina de start pentru **hailatat.icu**: listează jocurile. Fiecare joc e un pr
 
 ## Cum adaugi un joc nou
 
-1. Deployezi jocul ca proiect Vercel separat.
-2. În proiectul jocului: **Settings → Domains → Add Existing** → `numejoc.hailatat.icu`.
+1. **Înainte de primul deploy**, pui în rădăcina repo-ului jocului un `vercel.json` cu:
+   ```json
+   { "regions": ["fra1"] }
+   ```
+   Baza Supabase e în Frankfurt. Fără fișierul ăsta, Vercel rulează funcțiile în Washington (`iad1`),
+   fiecare query trece oceanul și jocul are 1–2 s delay în loc de ~0,3 s.
+   După deploy verifici: headerul `X-Vercel-Id` al unui request la `/api/...` trebuie să conțină `fra1::fra1`, nu `iad1`.
+2. Deployezi jocul ca proiect Vercel separat.
+3. În proiectul jocului: **Settings → Domains → Add Existing** → `numejoc.hailatat.icu`.
    DNS-ul domeniului e la Vercel, deci înregistrarea se creează automat.
-3. Adaugi o intrare în [`src/games.ts`](src/games.ts), apoi faci commit și push pe `main`. Vercel redeployează singur.
+4. Adaugi o intrare în [`src/games.ts`](src/games.ts), cu un `slug` unic (același pe care jocul îl scrie în
+   coloana `game` din `hub_feedback`), apoi faci commit și push pe `main`. Vercel redeployează singur.
 
 ## Local
 
