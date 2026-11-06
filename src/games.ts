@@ -39,4 +39,11 @@ export const games: Game[] = [
     emoji: "🎲",
     tag: "2 jucători + spectatori",
   },
+  {
+    name: "Barbut",
+    description: "Barbut curat cu zaruri, în doi. Până la 5 chibiți pot intra oricând și pariază Șan sau Brăila.",
+    url: "https://barbut.hailatat.icu",
+    emoji: "🎰",
+    tag: "2 jucători + 5 chibiți",
+  },
 ];
