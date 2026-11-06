@@ -77,6 +77,14 @@ export const games: Game[] = [
     emoji: "7️⃣",
     tag: "2–4 jucători",
   },
+  {
+    slug: "remi",
+    name: "Remi",
+    description: "Remi pe tablă cu 106 piese și jokeri. Etalare de la 45, serii și scări, închizi din mână pentru dublu.",
+    url: "https://remi.hailatat.icu",
+    emoji: "🀄",
+    tag: "2–4 jucători",
+  },
 ];
 
 /** Label + emoji for every slug that can appear in hub_feedback.game. */
