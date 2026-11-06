@@ -25,4 +25,11 @@ export const games: Game[] = [
     emoji: "✈️",
     tag: "2 jucători + spectatori",
   },
+  {
+    name: "X și 0",
+    description: "X și 0 clasic, cu un prieten. Încă 2 pot intra ca spectatori și urmăresc jocul live.",
+    url: "https://xsi0.hailatat.icu",
+    emoji: "❌",
+    tag: "2 jucători + spectatori",
+  },
 ];
