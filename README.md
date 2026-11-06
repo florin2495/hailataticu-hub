@@ -1,10 +1,10 @@
-# hailatat-hub
+# hailataticu-hub
 
 Pagina de start pentru **hailatat.icu**: listează jocurile. Fiecare joc e un proiect Vercel separat, pe subdomeniul lui.
 
 | Adresă | Proiect |
 | --- | --- |
-| `hailatat.icu` | acest repo (`florin2495/hailatat-hub`) |
+| `hailatat.icu` | acest repo (`florin2495/hailataticu-hub`) |
 | `bingo.hailatat.icu` | `florin2495/webBingoGame` |
 
 ## Cum adaugi un joc nou
