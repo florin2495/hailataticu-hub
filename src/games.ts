@@ -69,6 +69,14 @@ export const games: Game[] = [
     emoji: "🃏",
     tag: "3–4 jucători",
   },
+  {
+    slug: "septica",
+    name: "Șeptică",
+    description: "Șeptica clasică: taie cu aceeași carte sau cu 7, adună 10-uri și ași. 2–4 prieteni, la 4 și pe echipe.",
+    url: "https://septica.hailatat.icu",
+    emoji: "7️⃣",
+    tag: "2–4 jucători",
+  },
 ];
 
 /** Label + emoji for every slug that can appear in hub_feedback.game. */
