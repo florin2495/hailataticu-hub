@@ -10,6 +10,13 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "haiLaTăticu",
   description: "Jocuri mici, de jucat cu prietenii.",
+  applicationName: "haiLaTăticu",
+  other: { "apple-mobile-web-app-capable": "yes" },
+  appleWebApp: {
+    capable: true,
+    title: "haiLaTăticu",
+    statusBarStyle: "default",
+  },
 };
 
 export const viewport: Viewport = {
