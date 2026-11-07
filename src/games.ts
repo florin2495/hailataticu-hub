@@ -1,11 +1,13 @@
-// The list of games shown on hailatat.icu.
-// To add a game: deploy it as its own Vercel project on a subdomain, then append one entry here.
+// The list of games shown on games.hailatat.icu.
+// To add a game: deploy it as its own Vercel project with `basePath: "/<path>"`, add it to `zones`
+// in next.config.ts (the hub proxies /<path>/* to it), then append one entry here with url "/<path>".
 
 export interface Game {
   /** Value stored in hub_feedback.game. */
   slug: string;
   name: string;
   description: string;
+  /** Same-origin path ("/poker") for our games, absolute URL for external ones. */
   url: string;
   emoji: string;
   /** Optional image in /public, shown instead of the emoji (cards and feedback filters). */
@@ -14,7 +16,7 @@ export interface Game {
   tag?: string;
   /** Pins the card's position. Entries without it keep their array order; 99 = always last. */
   order?: number;
-  /** Hosted outside hailatat.icu and does not write to hub_feedback (left out of feedbackSources). */
+  /** Hosted outside games.hailatat.icu and does not write to hub_feedback (left out of feedbackSources). */
   external?: boolean;
 }
 
@@ -25,7 +27,7 @@ const gameList: Game[] = [
     slug: "bingo",
     name: "Bingo",
     description: "Bingo-ul de pe hârtie, jucat cu prietenii pe telefon. Matrice N×N, ture, validare.",
-    url: "https://bingo.hailatat.icu",
+    url: "/classicbingo",
     emoji: "🎱",
     tag: "multiplayer",
   },
@@ -33,7 +35,7 @@ const gameList: Game[] = [
     slug: "backgammon",
     name: "Table",
     description: "Table (backgammon) în doi, pe telefon. Meci până la 1–7 puncte. Încă 2 prieteni pot privi.",
-    url: "https://backgammon.hailatat.icu",
+    url: "/backgammon",
     emoji: "🎲",
     tag: "2 jucători + spectatori",
   },
@@ -41,7 +43,7 @@ const gameList: Game[] = [
     slug: "airplanes",
     name: "Avioanele",
     description: "Avioanele de pe foaia de matematică, în doi. Tabla ta sus, a adversarului jos. Prietenii pot privi.",
-    url: "https://airplanes.hailatat.icu",
+    url: "/airplanes",
     emoji: "✈️",
     tag: "2 jucători + spectatori",
   },
@@ -49,7 +51,7 @@ const gameList: Game[] = [
     slug: "tictactoe",
     name: "X și 0",
     description: "X și 0 clasic, cu un prieten. Încă 2 pot intra ca spectatori și urmăresc jocul live.",
-    url: "https://tictactoe.hailatat.icu",
+    url: "/tictactoe",
     emoji: "❌",
     tag: "2 jucători + spectatori",
   },
@@ -57,7 +59,7 @@ const gameList: Game[] = [
     slug: "barbut",
     name: "Barbut",
     description: "Barbut curat cu zaruri, în doi. Până la 5 chibiți pot intra oricând și pariază Șan sau Brăila.",
-    url: "https://barbut.hailatat.icu",
+    url: "/barbut",
     emoji: "🎰",
     tag: "2 jucători + 5 chibiți",
   },
@@ -65,7 +67,7 @@ const gameList: Game[] = [
     slug: "rentz",
     name: "Rentz",
     description: "Rentz-ul clasic cu cărți, în 3 sau 4 prieteni. 7 jocuri fiecare, iar o dată pe meci poți refuza cărțile.",
-    url: "https://rentz.hailatat.icu",
+    url: "/rentz",
     emoji: "♥️",
     tag: "3–4 jucători",
   },
@@ -73,7 +75,7 @@ const gameList: Game[] = [
     slug: "whist",
     name: "Whist",
     description: "Whist românesc cu licitație, 1-8-1 sau 8-1-8. Atu, levate, foaie de scor și bonus ±10.",
-    url: "https://whist.hailatat.icu",
+    url: "/whist",
     emoji: "🃏",
     tag: "3–4 jucători",
   },
@@ -81,7 +83,7 @@ const gameList: Game[] = [
     slug: "septica",
     name: "Șeptică",
     description: "Șeptica clasică: taie cu aceeași carte sau cu 7, adună 10-uri și ași. 2–4 prieteni, la 4 și pe echipe.",
-    url: "https://septica.hailatat.icu",
+    url: "/septica",
     emoji: "7️⃣",
     tag: "2–4 jucători",
   },
@@ -89,7 +91,7 @@ const gameList: Game[] = [
     slug: "remi",
     name: "Remi",
     description: "Remi pe tablă cu 106 piese și jokeri. Etalare de la 45, serii și scări, închizi din mână pentru dublu.",
-    url: "https://remi.hailatat.icu",
+    url: "/remi",
     emoji: "🃏",
     image: "/games/remi.svg",
     tag: "2–4 jucători",
@@ -98,7 +100,7 @@ const gameList: Game[] = [
     slug: "poker",
     name: "Poker",
     description: "Texas Hold'em în format turneu: buy-in în jetoane, blind-uri care cresc, side pots. Prietenii pot privi.",
-    url: "https://poker.hailatat.icu",
+    url: "/poker",
     emoji: "♠️",
     tag: "2–16 jucători + 16 observatori",
   },
@@ -106,7 +108,7 @@ const gameList: Game[] = [
     slug: "yams",
     name: "Yams",
     description: "Clasicul joc cu 5 zaruri: 3 aruncări pe tură, 13 căsuțe, bonus la 63 și la Yams. Pe rând, cu cronometru.",
-    url: "https://yams.hailatat.icu",
+    url: "/yams",
     emoji: "🎯",
     tag: "2–16 jucători",
   },

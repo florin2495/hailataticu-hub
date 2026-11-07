@@ -48,7 +48,7 @@ export default function Home() {
         ))}
       </ul>
 
-      <footer className="mt-auto pt-16 text-center text-xs text-zinc-500">hailatat.icu</footer>
+      <footer className="mt-auto pt-16 text-center text-xs text-zinc-500">games.hailatat.icu</footer>
     </main>
   );
 }
