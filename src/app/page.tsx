@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { games } from "@/games";
 import FeedbackButton from "@/components/FeedbackButton";
+import GameIcon from "@/components/GameIcon";
 
 export default function Home() {
   return (
@@ -28,8 +29,8 @@ export default function Home() {
               className="group flex h-full flex-col gap-3 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-500"
             >
               <span className="flex items-center justify-between">
-                <span aria-hidden className="text-4xl">
-                  {game.emoji}
+                <span className="text-4xl">
+                  <GameIcon emoji={game.emoji} image={game.image} size={40} />
                 </span>
                 {game.tag && (
                   <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-semibold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">

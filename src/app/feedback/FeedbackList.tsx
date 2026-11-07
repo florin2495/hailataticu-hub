@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { feedbackSources } from "@/games";
 import FeedbackButton from "@/components/FeedbackButton";
+import GameIcon from "@/components/GameIcon";
 
 interface Item {
   id: string;
@@ -110,7 +111,7 @@ export default function FeedbackList() {
         </button>
         {feedbackSources.map((s) => (
           <button key={s.slug} type="button" className={chip(filter === s.slug)} onClick={() => setFilter(s.slug)}>
-            {s.emoji} {s.name}
+            <GameIcon emoji={s.emoji} image={s.image} size={16} /> {s.name}
           </button>
         ))}
       </div>
@@ -137,7 +138,7 @@ export default function FeedbackList() {
               <div className="mb-2 flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-bold">
-                    <span aria-hidden>{src?.emoji ?? "❓"}</span> {src?.name ?? item.game}
+                    <GameIcon emoji={src?.emoji ?? "❓"} image={src?.image} size={18} /> {src?.name ?? item.game}
                   </p>
                   <p className="text-sm text-zinc-600 dark:text-zinc-400">
                     {item.nickname || "Anonim"} ·{" "}

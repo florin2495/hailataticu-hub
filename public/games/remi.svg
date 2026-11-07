@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Joker de Remi">
+  <rect x="12" y="4" width="40" height="56" rx="6" fill="#fffbeb" stroke="#a8a29e" stroke-width="2"/>
+  <circle cx="32" cy="29" r="15" fill="#fde047" stroke="#dc2626" stroke-width="3"/>
+  <circle cx="26" cy="24" r="2.6" fill="#0284c7"/>
+  <circle cx="38" cy="24" r="2.6" fill="#0284c7"/>
+  <path d="M23.5 31.5c2.2 6.2 14.8 6.2 17 0" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+</svg>
