@@ -86,6 +86,14 @@ export const games: Game[] = [
     emoji: "🀄",
     tag: "2–4 jucători",
   },
+  {
+    slug: "poker",
+    name: "Poker",
+    description: "Texas Hold'em în format turneu: buy-in în jetoane, blind-uri care cresc, side pots. Prietenii pot privi.",
+    url: "https://poker.hailatat.icu",
+    emoji: "♠️",
+    tag: "2–16 jucători + 16 observatori",
+  },
 ];
 
 /** Label + emoji for every slug that can appear in hub_feedback.game. */

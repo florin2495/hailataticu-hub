@@ -11,6 +11,7 @@ Pagina de start pentru **hailatat.icu**: listează jocurile. Fiecare joc e un pr
 | `tictactoe.hailatat.icu` | `florin2495/webXsi0Game` |
 | `barbut.hailatat.icu` | `florin2495/webBarbutGame` |
 | `whist.hailatat.icu` | `florin2495/webWhistGame` |
+| `poker.hailatat.icu` | `florin2495/webPokerGame` |
 
 ## Cum adaugi un joc nou
 
