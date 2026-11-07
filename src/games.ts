@@ -8,12 +8,19 @@ export interface Game {
   description: string;
   url: string;
   emoji: string;
+  /** Optional image in /public, shown instead of the emoji (cards and feedback filters). */
+  image?: string;
   /** Optional short tag, e.g. "multiplayer". */
   tag?: string;
+  /** Pins the card's position. Entries without it keep their array order; 99 = always last. */
+  order?: number;
+  /** Hosted outside hailatat.icu and does not write to hub_feedback (left out of feedbackSources). */
+  external?: boolean;
 }
 
 // Keep the same order as the game folders in D:\_DEv (001_Bingo, 002_Table, 003_Avioanele, 003_Xsi0, 005_Barbut, ...).
-export const games: Game[] = [
+// New games go at the end of the array; entries with `order` (e.g. 99) are still sorted after them.
+const gameList: Game[] = [
   {
     slug: "bingo",
     name: "Bingo",
@@ -83,7 +90,8 @@ export const games: Game[] = [
     name: "Remi",
     description: "Remi pe tablă cu 106 piese și jokeri. Etalare de la 45, serii și scări, închizi din mână pentru dublu.",
     url: "https://remi.hailatat.icu",
-    emoji: "🀄",
+    emoji: "🃏",
+    image: "/games/remi.svg",
     tag: "2–4 jucători",
   },
   {
@@ -102,10 +110,25 @@ export const games: Game[] = [
     emoji: "🎯",
     tag: "2–16 jucători",
   },
+  {
+    slug: "cine-i-acolo",
+    name: "Cine-i acolo?!",
+    description: "Joc extern, găzduit separat. Are clasament și magazin.",
+    url: "https://cine-i-acolo.vercel.app/",
+    emoji: "🚪",
+    order: 99,
+    external: true,
+  },
 ];
 
+// Stable sort: unpinned games keep their array position, pinned ones (order 99) go last.
+export const games: Game[] = gameList
+  .map((g, i) => ({ g, key: g.order ?? i }))
+  .sort((a, b) => a.key - b.key)
+  .map(({ g }) => g);
+
 /** Label + emoji for every slug that can appear in hub_feedback.game. */
-export const feedbackSources: { slug: string; name: string; emoji: string }[] = [
+export const feedbackSources: { slug: string; name: string; emoji: string; image?: string }[] = [
   { slug: "hub", name: "haiLaTăticu", emoji: "🏠" },
-  ...games.map((g) => ({ slug: g.slug, name: g.name, emoji: g.emoji })),
+  ...games.filter((g) => !g.external).map((g) => ({ slug: g.slug, name: g.name, emoji: g.emoji, image: g.image })),
 ];
