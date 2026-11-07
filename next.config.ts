@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 // Vercel project. Every game sets `basePath` to the same path, so pages, /api and /_next assets all
 // live under it. One origin for everything keeps an installed PWA (scope "/") fullscreen across games.
 // Links from the hub to a game (and back) must be plain <a>, not next/link (hard navigation between zones).
-const zones: { path: string; origin: string | undefined }[] = [
+const zones: { path: string; origin: string }[] = [
   { path: "/classicbingo", origin: "https://web-bingo-game.vercel.app" },
   { path: "/backgammon", origin: "https://web-table-game.vercel.app" },
   { path: "/airplanes", origin: "https://web-avioanele-game.vercel.app" },
@@ -13,9 +13,9 @@ const zones: { path: string; origin: string | undefined }[] = [
   { path: "/rentz", origin: "https://web-rentz-game.vercel.app" },
   { path: "/whist", origin: "https://web-whist-game.vercel.app" },
   { path: "/septica", origin: "https://web-septica-game.vercel.app" },
-  { path: "/remi", origin: process.env.REMI_ORIGIN },
-  { path: "/poker", origin: process.env.POKER_ORIGIN },
-  { path: "/yams", origin: process.env.YAMS_ORIGIN },
+  { path: "/remi", origin: "https://009web-remi-game.vercel.app" },
+  { path: "/poker", origin: "https://010web-poker-game.vercel.app" },
+  { path: "/yams", origin: "https://011web-yams-game.vercel.app" },
 ];
 
 const nextConfig: NextConfig = {
@@ -31,9 +31,7 @@ const nextConfig: NextConfig = {
     },
   },
   async rewrites() {
-    return zones
-      .filter((z): z is { path: string; origin: string } => !!z.origin)
-      .flatMap(({ path, origin }) => [
+    return zones.flatMap(({ path, origin }) => [
         { source: path, destination: `${origin}${path}` },
         { source: `${path}/:path*`, destination: `${origin}${path}/:path*` },
       ]);
