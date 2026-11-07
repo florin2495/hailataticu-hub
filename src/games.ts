@@ -12,6 +12,7 @@ export interface Game {
   tag?: string;
 }
 
+// Keep the same order as the game folders in D:\_DEv (001_Bingo, 002_Table, 003_Avioanele, 003_Xsi0, 005_Barbut, ...).
 export const games: Game[] = [
   {
     slug: "bingo",
@@ -20,6 +21,14 @@ export const games: Game[] = [
     url: "https://bingo.hailatat.icu",
     emoji: "🎱",
     tag: "multiplayer",
+  },
+  {
+    slug: "backgammon",
+    name: "Table",
+    description: "Table (backgammon) în doi, pe telefon. Meci până la 1–7 puncte. Încă 2 prieteni pot privi.",
+    url: "https://backgammon.hailatat.icu",
+    emoji: "🎲",
+    tag: "2 jucători + spectatori",
   },
   {
     slug: "airplanes",
@@ -35,14 +44,6 @@ export const games: Game[] = [
     description: "X și 0 clasic, cu un prieten. Încă 2 pot intra ca spectatori și urmăresc jocul live.",
     url: "https://tictactoe.hailatat.icu",
     emoji: "❌",
-    tag: "2 jucători + spectatori",
-  },
-  {
-    slug: "backgammon",
-    name: "Table",
-    description: "Table (backgammon) în doi, pe telefon. Meci până la 1–7 puncte. Încă 2 prieteni pot privi.",
-    url: "https://backgammon.hailatat.icu",
-    emoji: "🎲",
     tag: "2 jucători + spectatori",
   },
   {

@@ -6,6 +6,7 @@ Hub site hailatat.icu (Next.js + Tailwind). Lists the games and collects/reads f
 
 - GitHub account: **florin2495** only. Remote must be `florin2495/hailataticu-hub`.
 - Push to `main` deploys the hub to production (Vercel).
+- Functions run in `fra1` (Frankfurt, `vercel.json` `{ "regions": ["fra1"] }`), next to the Supabase DB. Never remove it: the Vercel default `iad1` (Washington) makes every DB query cross the Atlantic (1-2 s per request instead of ~0.3 s).
 - One Supabase project is shared by all games. Hub tables are prefixed `hub_` (games use their own prefixes, e.g. `airplanes_`).
 
 ## Migrations (apply by hand in the Supabase SQL editor)
