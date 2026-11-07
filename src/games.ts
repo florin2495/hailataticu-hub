@@ -94,6 +94,14 @@ export const games: Game[] = [
     emoji: "♠️",
     tag: "2–16 jucători + 16 observatori",
   },
+  {
+    slug: "yams",
+    name: "Yams",
+    description: "Clasicul joc cu 5 zaruri: 3 aruncări pe tură, 13 căsuțe, bonus la 63 și la Yams. Pe rând, cu cronometru.",
+    url: "https://yams.hailatat.icu",
+    emoji: "🎯",
+    tag: "2–16 jucători",
+  },
 ];
 
 /** Label + emoji for every slug that can appear in hub_feedback.game. */
