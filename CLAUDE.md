@@ -16,6 +16,7 @@ Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/cla
 | File | Status |
 | --- | --- |
 | `supabase/migrations/001_hub_feedback.sql` | applied 2026-11-07, verified |
+| `supabase/migrations/002_hub_leaderboard.sql` | **not applied yet** (run in the Supabase SQL editor; games report to it) |
 
 `supabase/schema.sql` mirrors the current full schema.
 
