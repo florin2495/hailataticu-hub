@@ -1,0 +1,29 @@
+name: Smoke (production)
+
+# Manual only (Actions tab > Run workflow, or `gh workflow run smoke.yml --ref main [-f base_url=...]`).
+# Read-only HTTP checks of the deployed hub and every game zone behind it. Writes nothing, never posts feedback.
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Hub base URL"
+        required: true
+        default: "https://games.hailatat.icu"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # scripts/smoke.mjs uses only Node built-ins: no npm ci needed.
+      - name: Smoke
+        env:
+          BASE_URL: ${{ inputs.base_url }}
+        run: node scripts/smoke.mjs "$BASE_URL"

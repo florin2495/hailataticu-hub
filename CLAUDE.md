@@ -7,7 +7,7 @@ Hub site games.hailatat.icu (Next.js + Tailwind). Lists the games and collects/r
 Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/classicbingo`, `/backgammon`, `/airplanes`, `/tictactoe`, `/barbut`, `/rentz`, `/whist`, `/septica`, `/remi`, `/poker`, `/yams`) to that game's own Vercel project (`zones` in `next.config.ts`). Each game sets the same `basePath`. One origin keeps the installed PWA fullscreen across games. Links between hub and games must be plain `<a>`, never `next/link`.
 
 - GitHub account: **florin2495** only. Remote must be `florin2495/hailataticu-hub`.
-- Push to `main` deploys the hub to production (Vercel).
+- Repo is **public**. Push to `main` deploys the hub to production (Vercel). Bump the patch version in `package.json` before every push to `main`.
 - Functions run in `fra1` (Frankfurt, `vercel.json` `{ "regions": ["fra1"] }`), next to the Supabase DB. Never remove it: the Vercel default `iad1` (Washington) makes every DB query cross the Atlantic (1-2 s per request instead of ~0.3 s).
 - One Supabase project is shared by all games. Hub tables are prefixed `hub_` (games use their own prefixes, e.g. `airplanes_`).
 
@@ -16,7 +16,7 @@ Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/cla
 | File | Status |
 | --- | --- |
 | `supabase/migrations/001_hub_feedback.sql` | applied 2026-11-07, verified |
-| `supabase/migrations/002_hub_leaderboard.sql` | **not applied yet** (run in the Supabase SQL editor; games report to it) |
+| `supabase/migrations/002_hub_leaderboard.sql` | applied (verified 2026-11-14 by effect: `hub_leaderboard` readable with the service role and holds rows; games report to it) |
 
 `supabase/schema.sql` mirrors the current full schema.
 
@@ -29,3 +29,14 @@ Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/cla
 - Table `hub_feedback` (RLS on, no policies: only the service role key reads/writes).
 - Hub routes: `GET/POST /api/feedback`, `POST /api/feedback/delete` (password checked server-side). Page: `/feedback`.
 - Each game inserts into `hub_feedback` through its own `/api/feedback` route, with `game` = slug: `hub`, `bingo`, `backgammon`, `airplanes`, `tictactoe`, `barbut`, `rentz`, `whist`, `septica`, `remi`, `poker`, `yams`. Slugs live in `src/games.ts`.
+
+## Testing (GitHub Actions, manual only)
+All checks run in GitHub Actions on the free tier (public repo, standard `ubuntu-latest` runners only, never billed runners),
+never locally (user's rule, see `D:\_DEv\CLAUDE.md`). Every workflow is `workflow_dispatch` only: nothing gates a push.
+Start one with `gh workflow run <file> --ref main`, then `gh run watch <id> --exit-status`.
+| Workflow | Runs |
+| --- | --- |
+| `.github/workflows/check.yml` "Check code" | `npx next typegen` + `npx tsc --noEmit`, `npx eslint src`, `npx next build` (repo secrets `NEXT_PUBLIC_SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` passed to the build only). Every step runs even if an earlier one failed |
+| `.github/workflows/smoke.yml` "Smoke (production)" | `node scripts/smoke.mjs <base_url>` (default `https://games.hailatat.icu`): read-only HTTP checks of `/`, `/clasament`, `/feedback`, `_next` assets, `GET /api/leaderboard` (200 with a game, 400 without), and for every zone in `next.config.ts`: the game page answers 200 through the hub with assets under its own basePath, one asset loads, `/<path>/room/ZZZZZZ` is not a 5xx. Writes nothing, never posts feedback |
+
+There are no unit tests in the hub yet (no `npm test`). Each game has its own test workflows in its repo.
