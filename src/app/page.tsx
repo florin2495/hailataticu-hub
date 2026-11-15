@@ -2,6 +2,7 @@ import Link from "next/link";
 import { games } from "@/games";
 import FeedbackButton from "@/components/FeedbackButton";
 import GameIcon from "@/components/GameIcon";
+import { APP_VERSION } from "@/lib/version";
 
 export default function Home() {
   return (
@@ -48,7 +49,10 @@ export default function Home() {
         ))}
       </ul>
 
-      <footer className="mt-auto pt-16 text-center text-xs text-zinc-500">games.hailatat.icu</footer>
+      <footer className="mt-auto pt-16 text-center text-xs text-zinc-500">
+        <p>games.hailatat.icu</p>
+        <p className="mt-1" data-testid="app-version">Version: {APP_VERSION}</p>
+      </footer>
     </main>
   );
 }

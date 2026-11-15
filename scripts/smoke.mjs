@@ -22,6 +22,7 @@ check(zonePaths.length >= 11, `next.config.ts lists ${zonePaths.length} zones`);
 const home = await get("/");
 check(home.status === 200 && home.type.includes("text/html"), `/ -> ${home.status}`);
 for (const p of zonePaths) check(home.text.includes(`href="${p}`), `home links to ${p}`);
+check(home.text.includes(`Version: ${version}`) || home.text.includes(`Version: <!-- -->${version}`), `home footer shows Version: ${version}`);
 for (const p of ["/clasament", "/feedback"]) {
   const r = await get(p);
   check(r.status === 200, `${p} -> ${r.status}`);
