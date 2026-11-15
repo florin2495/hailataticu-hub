@@ -24,6 +24,14 @@ Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/cla
 
 `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `HUB_ADMIN_PASSWORD` (see `.env.example`). Never commit `.env.local`.
 
+## Update banner (installed PWA)
+- There is no service worker, but an installed PWA (iOS home screen) keeps the old page and JS in memory, so it never reloads by
+  itself. `src/components/UpdateBanner.tsx` (in the root layout) fetches `GET /api/version` (no-store, request-time) on load,
+  on every return to the app (`visibilitychange` / `focus` / `pageshow`) and every 5 min while visible. If the live version differs
+  from the bundled `APP_VERSION` (`src/lib/version.ts` = `package.json` version), it shows "Aplicația s-a actualizat (vX)" with an
+  "Actualizează" button (`location.reload()`). It only works because the version is bumped before every push to `main`.
+- Only the hub has it; each game is a separate zone/build and would need its own.
+
 ## Feedback
 
 - Table `hub_feedback` (RLS on, no policies: only the service role key reads/writes).

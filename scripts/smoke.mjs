@@ -32,7 +32,10 @@ const scripts = [...home.text.matchAll(/src="(\/_next\/static\/[^"]+\.js)"/g)].m
 check(scripts.length > 0, `hub serves ${scripts.length} _next scripts`);
 const asset = scripts[0] ? await get(scripts[0]) : { status: 0 };
 check(asset.status === 200, `hub _next asset -> ${asset.status}`);
-console.log(`info package.json version ${version}`);
+const live = await get("/api/version");
+let liveVersion = null;
+try { liveVersion = JSON.parse(live.text).version; } catch {}
+check(live.status === 200 && liveVersion === version, `/api/version -> ${live.status} ${liveVersion} (package.json ${version}; run after the deploy)`);
 
 // Public APIs (read-only).
 const lb = await get("/api/leaderboard?game=bingo");

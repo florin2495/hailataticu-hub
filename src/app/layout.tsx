@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import HamburgerMenu from "@/components/HamburgerMenu";
+import UpdateBanner from "@/components/UpdateBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="ro" className={`${geistSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <HamburgerMenu />
+        <UpdateBanner />
         {children}
       </body>
     </html>
