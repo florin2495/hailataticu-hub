@@ -66,10 +66,10 @@ const gameList: Game[] = [
   {
     slug: "rentz",
     name: "Rentz",
-    description: "Rentz-ul clasic cu cărți, în 3 sau 4 prieteni. 7 jocuri fiecare, iar o dată pe meci poți refuza cărțile.",
+    description: "Rentz-ul clasic cu cărți, între 3 și 6 prieteni. 8 jocuri fiecare (9 cu Totale +), un joc blind pe meci și Rentz de la Valeți.",
     url: "/rentz",
     emoji: "♥️",
-    tag: "3–4 jucători",
+    tag: "3–6 jucători",
   },
   {
     slug: "whist",
