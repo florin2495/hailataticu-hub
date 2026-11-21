@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { feedbackSources } from "@/games";
+import { feedbackSources, games } from "@/games";
 import GameIcon from "@/components/GameIcon";
 
 interface Row {
@@ -11,8 +11,9 @@ interface Row {
   games: number;
 }
 
-// Same slugs as the games that write to the leaderboard (everything but the hub itself).
-const tabs = feedbackSources.filter((s) => s.slug !== "hub");
+// Same slugs as the games that write to the leaderboard (everything but the hub itself and single-player games).
+const solo = new Set(games.filter((g) => g.solo).map((g) => g.slug));
+const tabs = feedbackSources.filter((s) => s.slug !== "hub" && !solo.has(s.slug));
 
 export default function Leaderboard() {
   const [game, setGame] = useState(tabs[0].slug);

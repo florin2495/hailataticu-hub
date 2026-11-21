@@ -18,6 +18,8 @@ export interface Game {
   order?: number;
   /** Hosted outside games.hailatat.icu and does not write to hub_feedback (left out of feedbackSources). */
   external?: boolean;
+  /** Single-player game with no hub leaderboard (no tab on /clasament). */
+  solo?: boolean;
 }
 
 // Keep the same order as the game folders in D:\_DEv (001_Bingo, 002_Table, 003_Avioanele, 003_Xsi0, 005_Barbut, ...).
@@ -111,6 +113,16 @@ const gameList: Game[] = [
     url: "/yams",
     emoji: "🎯",
     tag: "2–16 jucători",
+  },
+  {
+    slug: "solitaire",
+    name: "Solitaire",
+    description: "Pasiența clasică Klondike, cu cărțile care sar la final. Fără reclame, se instalează separat și merge fără internet.",
+    url: "/solitaire",
+    emoji: "🃏",
+    image: "/games/solitaire.svg",
+    tag: "1 jucător",
+    solo: true,
   },
   {
     slug: "cine-i-acolo",
