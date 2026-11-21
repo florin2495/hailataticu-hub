@@ -116,9 +116,9 @@ const gameList: Game[] = [
   },
   {
     slug: "solitaire",
-    name: "Solitaire",
+    name: "Classic Solitaire",
     description: "Pasiența clasică Klondike, cu cărțile care sar la final. Fără reclame, se instalează separat și merge fără internet.",
-    url: "/solitaire",
+    url: "/classicsolitaire",
     emoji: "🃏",
     image: "/games/solitaire.svg",
     tag: "1 jucător",

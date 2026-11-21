@@ -4,7 +4,7 @@
 
 Hub site games.hailatat.icu (Next.js + Tailwind). Lists the games and collects/reads feedback.
 
-Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/classicbingo`, `/backgammon`, `/airplanes`, `/tictactoe`, `/barbut`, `/rentz`, `/whist`, `/septica`, `/remi`, `/poker`, `/yams`, `/solitaire`) to that game's own Vercel project (`zones` in `next.config.ts`). Each game sets the same `basePath`. One origin keeps the installed PWA fullscreen across games. Links between hub and games must be plain `<a>`, never `next/link`.
+Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/classicbingo`, `/backgammon`, `/airplanes`, `/tictactoe`, `/barbut`, `/rentz`, `/whist`, `/septica`, `/remi`, `/poker`, `/yams`, `/classicsolitaire`) to that game's own Vercel project (`zones` in `next.config.ts`). Each game sets the same `basePath`. One origin keeps the installed PWA fullscreen across games. Links between hub and games must be plain `<a>`, never `next/link`.
 
 - GitHub account: **florin2495** only. Remote must be `florin2495/hailataticu-hub`.
 - Repo is **public**. Push to `main` deploys the hub to production (Vercel). Bump the patch version in `package.json` before every push to `main`.
