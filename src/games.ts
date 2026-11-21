@@ -125,6 +125,16 @@ const gameList: Game[] = [
     solo: true,
   },
   {
+    slug: "sudoku",
+    name: "Classic Sudoku",
+    description: "Sudoku în trei variante: clasic 9×9, Samurai cu 5 grile și Bradul de Crăciun. Ușor, mediu sau greu; merge fără internet.",
+    url: "/classicsudoku",
+    emoji: "🔢",
+    image: "/games/sudoku.svg",
+    tag: "1 jucător",
+    solo: true,
+  },
+  {
     slug: "cine-i-acolo",
     name: "Cine-i acolo?!",
     description: "Joc extern, găzduit separat. Are clasament și magazin.",

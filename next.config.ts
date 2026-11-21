@@ -17,6 +17,7 @@ const zones: { path: string; origin: string }[] = [
   { path: "/poker", origin: "https://010web-poker-game.vercel.app" },
   { path: "/yams", origin: "https://011web-yams-game.vercel.app" },
   { path: "/classicsolitaire", origin: "https://012web-classic-solitaire-game.vercel.app" },
+  { path: "/classicsudoku", origin: "https://013web-classic-sudoku-game.vercel.app" },
 ];
 
 const nextConfig: NextConfig = {
