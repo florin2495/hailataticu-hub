@@ -4,7 +4,7 @@
 
 Hub site games.hailatat.icu (Next.js + Tailwind). Lists the games and collects/reads feedback.
 
-Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/classicbingo`, `/backgammon`, `/airplanes`, `/tictactoe`, `/barbut`, `/rentz`, `/whist`, `/septica`, `/remi`, `/poker`, `/yams`, `/classicsolitaire`, `/classicsudoku`) to that game's own Vercel project (`zones` in `next.config.ts`). Each game sets the same `basePath`. One origin keeps the installed PWA fullscreen across games. Links between hub and games must be plain `<a>`, never `next/link`.
+Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/classicbingo`, `/backgammon`, `/airplanes`, `/tictactoe`, `/barbut`, `/rentz`, `/whist`, `/septica`, `/remi`, `/poker`, `/yams`, `/classicsolitaire`, `/classicsudoku`, `/marchipoly`) to that game's own Vercel project (`zones` in `next.config.ts`). Each game sets the same `basePath`. One origin keeps the installed PWA fullscreen across games. Links between hub and games must be plain `<a>`, never `next/link`.
 
 - GitHub account: **florin2495** only. Remote must be `florin2495/hailataticu-hub`.
 - Repo is **public**. Push to `main` deploys the hub to production (Vercel). Bump the patch version in `package.json` before every push to `main`.
@@ -36,7 +36,7 @@ Multi-zones: the hub owns `games.hailatat.icu` and proxies each game path (`/cla
 
 - Table `hub_feedback` (RLS on, no policies: only the service role key reads/writes).
 - Hub routes: `GET/POST /api/feedback`, `POST /api/feedback/delete` (password checked server-side). Page: `/feedback`.
-- Each game inserts into `hub_feedback` through its own `/api/feedback` route, with `game` = slug: `hub`, `bingo`, `backgammon`, `airplanes`, `tictactoe`, `barbut`, `rentz`, `whist`, `septica`, `remi`, `poker`, `yams`, `solitaire`, `sudoku`. Slugs live in `src/games.ts`.
+- Each game inserts into `hub_feedback` through its own `/api/feedback` route, with `game` = slug: `hub`, `bingo`, `backgammon`, `airplanes`, `tictactoe`, `barbut`, `rentz`, `whist`, `septica`, `remi`, `poker`, `yams`, `solitaire`, `sudoku`, `marchipoly`. Slugs live in `src/games.ts`.
 
 ## Testing (GitHub Actions, manual only)
 All checks run in GitHub Actions on the free tier (public repo, standard `ubuntu-latest` runners only, never billed runners),

@@ -135,6 +135,14 @@ const gameList: Game[] = [
     solo: true,
   },
   {
+    slug: "marchipoly",
+    name: "Marchipoly",
+    description: "Cumperi orașe, ridici case și hoteluri, iei chirie de la prieteni. Licitații, ipoteci și schimburi; banii de start îi alege host-ul.",
+    url: "/marchipoly",
+    emoji: "🎩",
+    tag: "4–6 jucători + 16 spectatori",
+  },
+  {
     slug: "cine-i-acolo",
     name: "Cine-i acolo?!",
     description: "Joc extern, găzduit separat. Are clasament și magazin.",
