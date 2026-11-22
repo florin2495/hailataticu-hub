@@ -145,7 +145,7 @@ const gameList: Game[] = [
   {
     slug: "macao",
     name: "Macao",
-    description: "Macao cu prietenii, fiecare pe telefonul lui. 2 și 3, jokeri, stop, stai o tură, schimbat suita, Macao și contra-Macao; regulile casei le alege host-ul.",
+    description: "Macao cu prietenii, fiecare pe telefonul lui. 2 și 3, jokeri, stop, stai o tură, schimbat culoarea, Macao și contra-Macao; regulile casei le alege host-ul.",
     url: "/macao",
     emoji: "♦️",
     tag: "2–6 jucători + 16 spectatori",
